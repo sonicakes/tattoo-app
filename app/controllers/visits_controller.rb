@@ -3,6 +3,7 @@ class VisitsController < ApplicationController
   end
 
   def show
+    @visit = Visit.find params[:id]
   end
 
   def edit

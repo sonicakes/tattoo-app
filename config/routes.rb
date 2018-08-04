@@ -1,31 +1,7 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/edit'
-  get 'bookings/create'
-  get 'bookings/new'
-  get 'bookings/destroy'
-  get 'bookings/update'
-  get 'visits/index'
-  get 'visits/show'
-  get 'visits/edit'
-  get 'visits/create'
-  get 'visits/new'
-  get 'visits/destroy'
-  get 'visits/update'
-  get 'works/index'
-  get 'works/show'
-  get 'works/edit'
-  get 'works/create'
-  get 'works/new'
-  get 'works/destroy'
-  get 'works/update'
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/create'
-  get 'users/new'
-  get 'users/destroy'
-  get 'users/update'
+  resources :users
+  resources :works
+  resources :visits
+  resources :bookings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
