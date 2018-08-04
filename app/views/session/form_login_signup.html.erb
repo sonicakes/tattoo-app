@@ -1,0 +1,64 @@
+<%= form_tag login_path do %>
+  <h1>Log In</h1>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email, "" %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password, ""  %>
+
+  <%= button_tag type: 'submit' do %>
+   Log In!
+  <% end %>
+<% end %>
+
+<p>
+  Don't have an account yet? Sign up below.
+</p>
+
+<%= form_tag signup_path do %>
+  <h1>Sign Up</h1>
+
+  <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></li>
+      <% end %>
+  <% end %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
+
+  <%= label_tag(:name, "Full Name")%>
+  <%= text_field_tag :name %>
+
+  <%= label_tag(:user_name, "Choose User Name")%>
+  <%= text_field_tag :user_name %>
+
+  <%= label_tag(:profile_image, "Choose Img Url")%>
+  <%= url_field_tag :profile_image %>
+
+  <%= label_tag(:location, "Choose Your Location")%>
+  <%= text_field_tag :location %>
+
+  <%= label_tag(:blurb, "Write Your Blurb")%>
+  <%= text_field_tag :blurb %>
+
+  <%= label_tag(:is_artist, "Are you an artist?")%>
+  <%= radio_button_tag(:is_artist_yes, 1) %>
+  <%= label_tag(:is_artist_yes, "Yes") %>
+  <%= radio_button_tag(:is_artist_no, 0) %>
+  <%= label_tag(:is_artist_no, "No") %>
+
+  <%= label_tag(:phone, "Provide Phone Number")%>
+  <%= text_field_tag :phone %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password, class: "form-control" %>
+
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag :password_confirmation, class: "form-control" %>
+
+  <%= button_tag type: 'submit' do %>
+   Sign Up!
+  <% end %>
+<% end %>

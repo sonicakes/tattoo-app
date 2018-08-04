@@ -1,2 +1,50 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= form_for @user do |f| %>
+
+        <h1>Sign Up</h1>
+
+
+      <% if @user.errors.any? %>
+
+          <% @user.errors.full_messages.each do |msg| %>
+            <p><%= msg %></li>
+          <% end %>
+
+      <% end %>
+
+
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+
+          <%= f.label(:name, "Full Name")%>
+          <%= f.text_field :name %>
+
+          <%= f.label(:user_name, "Choose User Name")%>
+          <%= f.text_field :user_name %>
+
+          <%= f.label(:profile_image, "Choose Img Url")%>
+          <%= f.url_field :profile_image %>
+
+          <%= f.label(:location, "Choose Your Location")%>
+          <%= f.text_field :location %>
+
+          <%= f.label(:blurb, "Write Your Blurb")%>
+          <%= f.text_field :blurb %>
+
+          <%= f.label(:is_artist, "Are you an artist?")%>
+          <%= radio_button_tag(:is_artist_yes, 1) %>
+          <%= label_tag(:is_artist_yes, "Yes") %>
+          <%= radio_button_tag(:is_artist_no, 0) %>
+          <%= label_tag(:is_artist_no, "No") %>
+
+          <%= f.label(:phone, "Provide Phone Number")%>
+          <%= f.text_field :phone %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+
+          <%= f.button %>
+
+<% end %>

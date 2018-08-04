@@ -20,6 +20,7 @@
 #
 
 class User < ApplicationRecord
+  has_secure_password
   has_many :visits
   has_many :works
   has_many :customer_bookings, :class_name => 'Booking', :foreign_key => 'customer_id'

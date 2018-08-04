@@ -6,7 +6,7 @@ User.destroy_all
 #this is admin only
 # this shows how the site works for just an administrator
 user1 = User.create(
-  :password_digest => "admin12345",
+  :password => "admin12345",
   :user_name => "admin_cool",
   :email => "admin@example.com",
   :name => "Admin Stroganoff",
@@ -23,7 +23,7 @@ user1 = User.create(
 # they have 5 works they have added
 # we use this user to show what a gallery with lots of work looks like
 user2 = User.create(
-  :password_digest => "chicken12345",
+  :password => "chicken12345",
   :user_name => "great-artist",
   :email => "tatoo_king@example.com",
   :name => "Harrison Ford",
@@ -40,7 +40,7 @@ user2 = User.create(
 # they are new and haven't uploaded anything
 # we use this user to show what any empty gallery will look like
 user3 = User.create(
-  :password_digest => "dog12345",
+  :password => "dog12345",
   :user_name => "simple_artist",
   :email => "simple_pleasures@example.com",
   :name => "John Travolta",
@@ -57,7 +57,7 @@ user3 = User.create(
 # we use this user so we can test what it looks like for a user
 # with an upcoming booking
 user4 = User.create(
-  :password_digest => "cat12345",
+  :password => "cat12345",
   :user_name => "johny_boy",
   :email => "john555@example.com",
   :name => "John Ruski",
@@ -73,7 +73,7 @@ user4 = User.create(
 # this is customer with nothing booked yet
 # we use this to show a user who has just signed up
 user5 = User.create(
-  :password_digest => "lizard12345",
+  :password => "lizard12345",
   :user_name => "lizzie_girl",
   :email => "lizzie_smith@example.com",
   :name => "Lizzie Vanilla",
