@@ -4,7 +4,7 @@ class CreateWorks < ActiveRecord::Migration[5.2]
       t.text :title
       t.integer :user_id
       t.decimal :price
-      t.text :artwork
+      t.text :artwork_image
       t.text :category
 
       t.timestamps

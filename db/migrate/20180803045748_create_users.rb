@@ -5,14 +5,14 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :user_name
       t.text :email
       t.text :name
-      t.text :profile_pic
+      t.text :profile_image
       t.text :location
       t.float :latitude
       t.float :longtitude
       t.text :phone
       t.boolean :is_artist
       t.text :blurb
-      t.boolean :admin
+      t.boolean :is_admin
 
       t.timestamps
     end
