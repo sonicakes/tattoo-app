@@ -7,12 +7,18 @@ var startcol;
 //inspired by Isura
 
 function setup() {
-  createCanvas(window.innerWidth, 600);
+  const canvas = createCanvas(window.innerWidth, 600);
+  // Move the canvas so it’s inside our <div id="sketch-holder">.
+  canvas.parent('sketch-holder');
   background(mouseX,mouseY);
   noFill(mouseX,mouseY);
   noiseSeed(random(mouseX));
   startcol = random(mouseY);
 
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, 600);
 }
 
 
