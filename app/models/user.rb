@@ -20,6 +20,13 @@
 #
 
 class User < ApplicationRecord
+  validates :name, :user_name, :email, :is_artist, :location, presence: true
+  validates :email, :name, :user_name, uniqueness: true
+  validates :blurb, length: { maximum: 500,
+       too_long: "Sorry, your blurb is too long! %{count} characters is the maximum allowed" }
+  validates :password, length: { in: 6..10,
+     too_long: "Sorry, your password is too long, %{count} characters is the maximum!",
+      too_short: "Sorry, your password is too short, %{count} characters is the minimum!"   }
   has_secure_password
   has_many :visits
   has_many :works
