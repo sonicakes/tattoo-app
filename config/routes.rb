@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :visits
   resources :bookings
 
-  root :to => 'works#index'
+  root :to => 'pages#index'
 
   # Session controller routes
   # This action shows a page with both a login and signup form
