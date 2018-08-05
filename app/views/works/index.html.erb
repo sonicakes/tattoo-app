@@ -1,2 +1,20 @@
-<h1>Works#index</h1>
-<p>Find me in app/views/works/index.html.erb</p>
+<h1>All Works</h1>
+
+      <% @works.each do |work| %>
+
+
+              <p ><%= link_to work.title, work %></p>
+
+          <% if work.artwork_image.present? %>
+            <a href="<%= url_for work %>"><img src="<%= work.artwork_image %>"alt="<%=work.title %>"></a>
+          <% else %>
+          <p>  No photos provided for artwork.</p>
+          <% end %>
+
+          <p>
+            Created by <i><%= work.user.name %></i>
+            on <i><%= work.created_at.strftime("%Y-%m-%d") %></i>,
+            at <i><%= work.created_at.strftime("%I:%M%p") %></i>
+          </p>
+
+      <% end %>
