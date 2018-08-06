@@ -11,12 +11,12 @@
   </head>
 
   <body>
-
+            <% if @current_user.present? %>
            <%= link_to 'All Works', works_path %>
 
            <%= link_to 'New Work', new_work_path %>
 
-         <% if @current_user.present? %>
+
 
              <%= link_to "Log out #{ @current_user.name }", logout_path %>
 
