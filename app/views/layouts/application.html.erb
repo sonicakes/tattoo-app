@@ -5,54 +5,99 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
   </head>
 
   <body>
-            <% if @current_user.present? %>
-           <%= link_to 'All Works', works_path %>
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Logo -->
+        <div class="logo">
+          <!-- Logo Placeholder for Inlustration -->
+          <%= link_to root_path do %>
+          <i class="fas fa-chess-knight"></i>
+          Ink Space
+        <% end %>
 
-           <%= link_to 'New Work', new_work_path %>
+      </div>
+
+      <!-- Navbar Links -->
+      <ul class="menu">
+        <% if @current_user.present? %>
+          <li><%= link_to 'All Works', works_path %></li>
+
+          <li><%= link_to 'New Work', new_work_path %></li>
+
+          <li>
+            <%= link_to "Log out #{ @current_user.name }", logout_path %></li>
+
+        <% else %>
+
+          <li><%= link_to new_user_path do %>
+            Sign Up
+          <% end %>
+        </li>
+
+        <li><%= link_to login_path do %>
+          Log In
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Menu Icon -->
+<div class="menuIcon">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+<div class="overlay-menu">
+  <ul class="menu">
+    <% if @current_user.present? %>
+      <li><%= link_to 'All Works', works_path %></li>
+
+      <li><%= link_to 'New Work', new_work_path %></li>
+
+      <li>
+        <%= link_to "Log out #{ @current_user.name }", logout_path %></li>
+
+    <% else %>
+
+      <li><%= link_to new_user_path do %>
+        Sign Up
+      <% end %>
+    </li>
+
+    <li><%= link_to login_path do %>
+      Log In
+    <% end %>
+  </li>
+ <% end %>
+</ul>
+ 
+</div>
 
 
+<% if flash[:success] %>
 
-             <%= link_to "Log out #{ @current_user.name }", logout_path %>
+<%= flash[:success]%>
 
-         <% else %>
+<% end %>
+<% if flash[:notice] %>
 
-             <%= link_to new_user_path do %>
-             Sign Up
-             <% end %>
+<%= flash[:notice]%>
 
+<% end %>
+<% if flash[:error] %>
 
-             <%= link_to login_path do %>
-               Log In
-             <% end %>
+<%= flash[:error]%>
 
-         <% end %>
+<% end %>
 
-
-
-         <% if flash[:success] %>
-
-             <%= flash[:success]%>
-
-         <% end %>
-         <% if flash[:notice] %>
-
-             <%= flash[:notice]%>
-
-         <% end %>
-         <% if flash[:error] %>
-
-             <%= flash[:error]%>
-
-         <% end %>
-
-
-
-    <%= yield %>
-  </body>
+<%= yield %>
+</body>
 </html>

@@ -1,4 +1,4 @@
-// $(document).ready(() => {
+$(document).ready(() => {
 
   // Navigation
   // Responsive Toggle Navigation =============================================
@@ -28,4 +28,4 @@
   });
 
 
-// });
+ });
