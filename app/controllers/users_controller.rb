@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :authorize
+  before_action :authorize
   def new
     @user = User.new
   end
@@ -15,11 +15,9 @@ before_action :authorize
     end
   end
 
-
-
-def edit
-@user = @current_user
-end
+  def edit
+    @user = @current_user
+  end
 
   def update
     user = User.find params[:id]
@@ -30,11 +28,16 @@ end
     else
       user.profile_image = 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png'
     end
-    user.save
-    redirect_to user
+    if user.save
+      redirect_to user
+    else
+      @user = user
+      render :edit
     end
+  end
 
   private
+
   def user_params
     params.require(:user).permit(
       :email,
@@ -47,6 +50,7 @@ end
       :location,
       :phone,
       :blurb,
-      :is_artist )
+      :is_artist
+    )
   end
 end
