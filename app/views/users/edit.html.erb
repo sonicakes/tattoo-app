@@ -1,69 +1,55 @@
-<div class="container">
-  <% if @current_user.present? %>
+<% if @current_user.present? %>
     <h2>Edit Your Profile!</h2>
     <hr>
-    <div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <% if @current_user.image? %>
-            <%= image_tag @current_user.image, :class => "avatar img-circle img-thumbnail" %>
+          <% if @current_user.profile_image? %>
+            <%= image_tag @current_user.profile_image %>
           <% else %>
             <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png', :class => "avatar img-circle img-thumbnail" %>
             <h6>Upload a different photo...</h6>
           <% end %>
-        </div>
-      </div>
+
     <% end %>
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a>
-        <i class="fa fa-coffee"></i>
         <%= @current_user.name %>
       </div>
       <h3>Personal info</h3>
       <%= form_for(@user, :html => { :multipart => true}) do |f| %>
-      <div class="form-group">
-        <%= f.label :name, :class => 'col-md-3 control-label' %>
-        <div class="col-md-8">
-          <%= f.text_field :name, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :email, :class => 'col-md-3 control-label' %>
-        <div class="col-lg-8">
-          <%= f.text_field :email, :class => "form-control" %>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :password, :class => 'col-md-3 control-label' %>
-        <div class="col-md-8">
-          <%= f.password_field :password, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation, :class => 'col-md-3 control-label' %>
-        <div class="col-md-8">
-          <%= f.password_field :password_confirmation, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :image, :class => 'col-md-3 control-label' %>
-        <div class="col-md-8">
-          <%= f.file_field :image, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
+        <%= f.label(:name, "Full Name")%>
+          <%= f.text_field :name %>
 
-        <div class="col-md-6 d-flex">
-          <%= f.submit "Save changes!", :class => 'btn btn-primary button_edit'%>
+          <%= f.label :email%>
+            <%= text_field :email %>
 
-          <%= link_to "Post item instead?", new_item_path, :class => 'btn btn-primary', :method => 'get'%>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              <%= f.label_tag :password %>
+                <%= f.password_field :password%>
+
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation%>
+
+          <%= f.label(:user_name, "Choose User Name")%>
+          <%= f.text_field :user_name %>
+
+          <%= f.label(:profile_image, "Upload Img") %>
+            <%= f.file_field :profile_image %>
+
+          <%= f.label(:location, "Choose Your Location")%>
+          <%= f.text_field :location %>
+
+          <%= f.label(:blurb, "Write Your Blurb")%>
+          <%= f.text_field :blurb %>
+
+          <%= f.label(:is_artist, "Are you an artist?")%>
+          <%= radio_button_tag(:is_artist_yes, 1) %>
+          <%= label_tag(:is_artist_yes, "Yes") %>
+          <%= radio_button_tag(:is_artist_no, 0) %>
+          <%= label_tag(:is_artist_no, "No") %>
+
+          <%= f.label(:phone, "Provide Phone Number")%>
+          <%= f.text_field :phone %>
+
+          <%= f.submit "Save changes" %>
+
+
+
 <% end %>

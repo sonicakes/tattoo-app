@@ -23,7 +23,7 @@ before_action :authorize
       user.image = cloudinary['url']
     else
       user.image = 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png'
-
+    end
     end
 
   private
