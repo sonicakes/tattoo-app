@@ -167,3 +167,5 @@ booking1 = Booking.create(
   :start_hour => 11,
   :customer_id => user4.id,
   :artist_id => user2.id)
+  user2.bookings << booking1
+  use4.bookings << booking1
