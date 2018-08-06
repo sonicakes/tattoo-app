@@ -164,8 +164,8 @@ user2.visits << visit3
 # "Reminder, you a booking to do a tattoo for X time with Y."
 booking1 = Booking.create(
   :date => "2018-09-02",
-  :start_hour => 11,
-  :customer_id => user4.id,
-  :artist_id => user2.id)
-  user2.bookings << booking1
-  use4.bookings << booking1
+  :start_hour => 11)
+
+
+  user4.customer_bookings << booking1
+  user2.artist_bookings << booking1

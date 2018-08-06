@@ -32,5 +32,5 @@ class User < ApplicationRecord
   has_many :visits
   has_many :works
   has_many :customer_bookings, :class_name => 'Booking', :foreign_key => 'customer_id'
-  has_many :artist_bookings, :class_name => 'Booking', :foreign_key => 'artist_bookings'
+  has_many :artist_bookings, :class_name => 'Booking', :foreign_key => 'artist_id'
  end

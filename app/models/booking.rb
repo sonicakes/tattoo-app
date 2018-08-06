@@ -12,6 +12,6 @@
 #
 
 class Booking < ApplicationRecord
-  belongs_to :customer, :class_name => 'User'
-  belongs_to :artist, :class_name => 'User'
+  belongs_to :customer, :class_name => 'User', optional: true #shorthand for :optional => true
+  belongs_to :artist, :class_name => 'User', :optional => true
 end
