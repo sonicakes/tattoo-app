@@ -1,7 +1,7 @@
 
 <% if @work.user.id == @current_user.id %>
 
-<div style="margin-top:100px; color:green;">
+<div class="works-index">
 <%= link_to "Edit ArtWork", edit_work_path(@work)  %>
 
 <%= link_to "Delete Artwork", work_path(@work), :method => 'delete', :data => { :confirm => 'Are you sure?' }  %>
