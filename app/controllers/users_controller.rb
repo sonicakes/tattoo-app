@@ -15,6 +15,17 @@ before_action :authorize
     end
   end
 
+  def update
+    user = User.find params[:id]
+    user.update user_params
+    if params['user']['profile_image']
+      cloudinary = Cloudinary::Uploader.upload(params['user']['profile_image'])
+      user.image = cloudinary['url']
+    else
+      user.image = 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png'
+
+    end
+
   private
   def user_params
     params.require(:user).permit(

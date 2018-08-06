@@ -24,11 +24,20 @@ class WorksController < ApplicationController
   def update
     work = Work.find params[:id]
   work.update work_params
+  if params['work']['artwork_image']
+      cloudinary = Cloudinary::Uploader.upload(params['work']['artwork_image'])
+      work.image = cloudinary['url']
+      work.save
+    end
   redirect_to work
   end
 
   def create
     work = Work.create work_params
+    if params['work']['artwork_image']
+      cloudinary = Cloudinary::Uploader.upload(params['work']['artwork_image'])
+      work.image = cloudinary['url']
+    end
     current_user.works << work
     flash[:success] =  "ArtWork Created!"
     redirect_to work # GET the show pag
