@@ -29,9 +29,9 @@ function draw() {
   background(mouseX,mouseY);
   beginShape();
   var sx, sy;
-  for(var i = 0; i < np; i++) {
-    var angle = map(i, mouseX, np, mouseY, TWO_PI);
-    var cx = frameCount * 2 - 200;
+  for(let i = 0; i < np; i++) {
+    const angle = map(i, mouseX, np, mouseY, TWO_PI);
+    const cx = frameCount * 2 - 200;
     var cy = height / 2 + 50 * sin(frameCount / mouseX);
     var xx = 100 * cos(angle + cx / mouseX);
     var yy = 100 * sin(angle + cx / mouseY);
@@ -46,7 +46,7 @@ function draw() {
 
   }
   colorMode(HSB);
-  var hue = cx / mouseY - startcol;
+  const hue = cx / mouseY - startcol;
   if(hue < mouseX);
   stroke(hue, mouseX,mouseY);
   strokeWeight(MouseX);
@@ -60,9 +60,9 @@ function draw() {
 function draw() {
   beginShape();
   var sx, sy;
-  for(var i = 0; i < np; i++) {
-    var angle = map(i, 0, np, 0, TWO_PI);
-    var cx = frameCount * 2 - 200;
+  for(let i = 0; i < np; i++) {
+    const angle = map(i, 0, np, 0, TWO_PI);
+    const cx = frameCount * 2 - 200;
     var cy = height / 2 + 50 * sin(frameCount / mouseX);
     var xx = 100 * cos(angle + cx / mouseX);
     var yy = 100 * sin(angle + cx / mouseY);
@@ -77,7 +77,7 @@ function draw() {
     textSize(150);
     fill(255);
     textAlign(CENTER);
-    text("BOOK INK", 800, 400);
+    text("BOOK INK", 600, 400);
   }
   // colorMode(HSB);
   // var hue = cx / 10 - startcol;
