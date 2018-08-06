@@ -26,7 +26,7 @@ class WorksController < ApplicationController
   work.update work_params
   if params['work']['artwork_image']
       cloudinary = Cloudinary::Uploader.upload(params['work']['artwork_image'])
-      work.image = cloudinary['url']
+      work.artwork_image = cloudinary['url']
       work.save
     end
   redirect_to work
@@ -36,7 +36,7 @@ class WorksController < ApplicationController
     work = Work.create work_params
     if params['work']['artwork_image']
       cloudinary = Cloudinary::Uploader.upload(params['work']['artwork_image'])
-      work.image = cloudinary['url']
+      work.artwork_image = cloudinary['url']
     end
     current_user.works << work
     flash[:success] =  "ArtWork Created!"
@@ -55,6 +55,6 @@ class WorksController < ApplicationController
   # Strong params: create a whitelist of permitted parameters
 private
 def work_params
-  params.require(:work).permit(:title, :user_id, :price, :artwork_image)
+  params.require(:work).permit(:title, :user_id, :price, :category, :artwork_image)
 end
 end
