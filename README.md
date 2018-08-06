@@ -1,24 +1,11 @@
-# README
+# Ink Space
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Contributors:
 
-Things you may want to cover:
+- Misael Mercado, https://github.com/MisaelMP
+- Sonia Parker, https://github.com/sonicakes
 
-* Ruby version
+## Live link
+https://inkspace.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Other stuff coming soon

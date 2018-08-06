@@ -1,2 +1,24 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+
+<% if @work.user.id == @current_user.id %>
+
+<div style="margin-top:100px; color:green;">
+<%= link_to "Edit ArtWork", edit_work_path(@work)  %>
+
+<%= link_to "Delete Artwork", work_path(@work), :method => 'delete', :data => { :confirm => 'Are you sure?' }  %>
+</div>
+<% end %>
+
+
+              <p>Title of artwork is <%= @work.title %></p>
+              <p>Price of artwork is <%= @work.price %></p>
+              <p>Category is <%= @work.category %></p>
+
+          Created by <i><%= @work.user.name %></i>
+          on <i><%= @work.created_at.strftime("%Y-%m-%d") %></i>,
+          at <i><%= @work.created_at.strftime("%I:%M%p") %></i>
+
+      <% if @work.artwork_image.present? %>
+        <a href="<%= url_for @work %>"><img src="<%= @work.artwork_image %>"style='width:50%; height:50%;'""alt="<%=@work.title %>"></a>
+      <% else %>
+      <p>  No photos provided for artwork.</p>
+      <% end %>
