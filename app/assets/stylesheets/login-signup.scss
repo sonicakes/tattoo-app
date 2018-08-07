@@ -1,0 +1,20 @@
+#login-signup-container {
+  margin-top: 4rem;
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+
+#login-form {
+  background-color: lightSalmon;
+  border: 1px solid red;
+}
+
+#signup-form {
+  background-color: lightGreen;
+  border: 1px solid green;
+  display: none; // Hidden by defaults
+}
+
+#login-signup-toggler {
+  background-color: lightYellow;
+}

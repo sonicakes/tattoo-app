@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  if ( ! $('#map').length) {
+    // There is no map div on this page, so don't run code below
+    return;
+  }
+
   const latitude = $('#map').data('latitude');
   const longitude = $('#map').data('longitude');
   const title = $('#map').data('title');

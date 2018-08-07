@@ -1,83 +1,95 @@
-<div class="signup-container">
-
-  <% if flash[:success] %>p
-
+<% if flash[:success] %>p
   <%= flash[:success]%>
-
-  <% end %>
-  <% if flash[:notice] %>
-
+<% end %>
+<% if flash[:notice] %>
   <p class="notice"><%= flash[:notice]%></p>
-
-  <% end %>
-  <% if flash[:error] %>
-
+<% end %>
+<% if flash[:error] %>
   <p class="error"><%= flash[:error]%></p>
-
-  <% end %>
-
-
-<%= form_tag login_path do %>
-  <h1>Log In</h1>
-  <%= label_tag :email %>
-  <%= email_field_tag :email, "" %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password, ""  %>
-
-  <%= button_tag type: 'submit' do %>
-   Log In!
-  <% end %>
 <% end %>
 
-<p>
-  Don't have an account yet? Sign up below.
-</p>
+<div id="login-signup-container">
 
-<%= form_tag signup_path do %>
-  <h1>Sign Up</h1>
+  <div id="login-signup-toggler">
+    <button type="button" id="toggle-login">Login</button>
+    <button type="button" id="toggle-signup">Signup</button>
+  </div>
 
-  <% if @user.errors.any? %>
-      <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
+  <div id="login-form">
+    <%= form_tag login_path do %>
+      <h1>Log In</h1>
+      <%= label_tag :email %>
+      <%= email_field_tag :email, "" %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password, ""  %>
+
+      <%= button_tag type: 'submit' do %>
+       Log In!
       <% end %>
-  <% end %>
+    <% end %>
+  </div>
 
-  <%= label_tag :signup_email %>
-  <%= email_field_tag :signup_email %>
+  <div id="signup-form">
+    <%= form_tag signup_path do %>
+      <h1>Sign Up</h1>
 
-  <%= label_tag(:name, "Full Name")%>
-  <%= text_field_tag :name %>
+      <% if @user.errors.any? %>
+          <% @user.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+          <% end %>
+      <% end %>
 
-  <%= label_tag(:user_name, "Choose User Name")%>
-  <%= text_field_tag :user_name %>
+      <%= label_tag :signup_email %>
+      <%= email_field_tag :signup_email %>
 
-  <%= label_tag(:profile_image, "Upload Profile Image")%>
-  <%= file_field_tag :profile_image %>
+      <%= label_tag(:name, "Full Name")%>
+      <%= text_field_tag :name %>
 
-  <%= label_tag(:location, "Choose Your Location")%>
-  <%= text_field_tag :location %>
+      <%= label_tag(:user_name, "Choose User Name")%>
+      <%= text_field_tag :user_name %>
 
-  <%= label_tag(:blurb, "Write Your Blurb")%>
-  <%= text_field_tag :blurb %>
+      <%= label_tag(:profile_image, "Upload Profile Image")%>
+      <%= file_field_tag :profile_image %>
 
-  <%= label_tag(:is_artist, "Are you an artist?")%>
-  <%= radio_button_tag(:is_artist_yes, 1) %>
-  <%= label_tag(:is_artist_yes, "Yes") %>
-  <%= radio_button_tag(:is_artist_no, 0) %>
-  <%= label_tag(:is_artist_no, "No") %>
+      <%= label_tag(:location, "Choose Your Location")%>
+      <%= text_field_tag :location %>
 
-  <%= label_tag(:phone, "Provide Phone Number")%>
-  <%= text_field_tag :phone %>
+      <%= label_tag(:blurb, "Write Your Blurb")%>
+      <%= text_field_tag :blurb %>
 
-  <%= label_tag :signup_password %>
-  <%= password_field_tag :signup_password %>
+      <%= label_tag(:is_artist, "Are you an artist?")%>
+      <%= radio_button_tag(:is_artist_yes, 1) %>
+      <%= label_tag(:is_artist_yes, "Yes") %>
+      <%= radio_button_tag(:is_artist_no, 0) %>
+      <%= label_tag(:is_artist_no, "No") %>
 
-  <%= label_tag :password_confirmation %>
-  <%= password_field_tag :password_confirmation%>
+      <%= label_tag(:phone, "Provide Phone Number")%>
+      <%= text_field_tag :phone %>
 
-  <%= button_tag type: 'submit' do %>
-   Sign Up!
-  <% end %>
-<% end %>
+      <%= label_tag :signup_password %>
+      <%= password_field_tag :signup_password %>
+
+      <%= label_tag :password_confirmation %>
+      <%= password_field_tag :password_confirmation%>
+
+      <%= button_tag type: 'submit' do %>
+       Sign Up!
+      <% end %>
+    <% end %>
+  </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#toggle-login').click(function(){
+      $('#login-form').show();
+      $('#signup-form').hide();
+    });
+
+    $('#toggle-signup').click(function(){
+      $('#login-form').hide();
+      $('#signup-form').show();
+    });
+});
+</script>
