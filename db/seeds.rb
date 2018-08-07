@@ -3,6 +3,10 @@ Visit.destroy_all
 Work.destroy_all
 User.destroy_all
 
+#checking errors in seeds
+
+
+
 #this is admin only
 # this shows how the site works for just an administrator
 user1 = User.create(
@@ -85,7 +89,11 @@ user5 = User.create(
   :is_artist => false,
   :blurb => "Would love a custom-made tattoo for a reasonable price",
   :is_admin => false)
+  if user5.errors.any?
 
+      user5.errors.full_messages.each do |msg| 
+         p msg
+      end
 # Below we seed 5 works, then link them to user2
 
 work1 = Work.create(
