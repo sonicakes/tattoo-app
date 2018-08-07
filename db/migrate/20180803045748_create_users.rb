@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :profile_image
       t.text :location
       t.float :latitude
-      t.float :longtitude
+      t.float :longitude
       t.text :phone
       t.boolean :is_artist
       t.text :blurb

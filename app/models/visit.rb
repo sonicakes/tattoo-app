@@ -8,7 +8,7 @@
 #  end_date   :date
 #  location   :text
 #  latitude   :float
-#  longtitude :float
+#  longitude  :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
