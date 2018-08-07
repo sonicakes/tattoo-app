@@ -91,9 +91,10 @@ user5 = User.create(
   :is_admin => false)
   if user5.errors.any?
 
-      user5.errors.full_messages.each do |msg| 
+      user5.errors.full_messages.each do |msg|
          p msg
       end
+    end
 # Below we seed 5 works, then link them to user2
 
 work1 = Work.create(
