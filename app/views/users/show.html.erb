@@ -1,5 +1,5 @@
 
-<div class=''>
+<div class='profile-show'>
   <% if @current_user.profile_image? %>
     <%= image_tag @current_user.profile_image %>
   <% else %>
@@ -8,4 +8,5 @@
   <% if @current_user.present? %>
     <h4 class=''><%= @current_user.user_name %></h4>
   <% end %>
+  <div id="map" style='width: 400px; height: 400px;' data-latitude="<%= @user.latitude %>" data-longitude="<%= @user.longitude %>" data-title="<%= @user.name %>"></div>
 </div>
