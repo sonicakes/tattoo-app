@@ -1,2 +1,26 @@
-<h1>Visits#new</h1>
-<p>Find me in app/views/visits/new.html.erb</p>
+<!-- #  id         :bigint(8)        not null, primary key
+#  user_id    :integer
+#  start_date :date
+#  end_date   :date
+#  location   :text
+#  latitude   :float
+#  longtitude :float
+#  created_at :datetime         not null
+#  updated_at :datetime         not null -->
+#
+      <h1>New Visit</h1>
+
+<%= form_for @visit do |f| %>
+
+        <%= f.label :start_date %>
+        <%= f.date_field :start_date, :autofocus => true %>
+
+        <%= f.label :end_date %>
+        <%= f.date_field :end_date%>
+
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+
+        <%= submit_tag "Create New Visit" %>
+
+<% end %>

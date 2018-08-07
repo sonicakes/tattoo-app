@@ -30,9 +30,10 @@
           <li><%= link_to 'All Works', works_path %></li>
 
           <li><%= link_to 'New Work', new_work_path %></li>
+          
+          <li><%= link_to 'All Visits', visits_path %></li>
 
-          <li>
-            <%= link_to "Log out #{ @current_user.name }", logout_path %></li>
+          <li><%= link_to "Log out #{ @current_user.name }", logout_path %></li>
 
         <% else %>
 
@@ -62,8 +63,7 @@
 
       <li><%= link_to 'New Work', new_work_path %></li>
 
-      <li>
-        <%= link_to "Log out #{ @current_user.name }", logout_path %></li>
+      <li><%= link_to "Log out #{ @current_user.name }", logout_path %></li>
 
     <% else %>
 
