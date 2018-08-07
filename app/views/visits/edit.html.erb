@@ -1,2 +1,16 @@
-<h1>Visits#edit</h1>
-<p>Find me in app/views/visits/edit.html.erb</p>
+<h1>Edit Visit</h1>
+
+<%= form_for @visit do |f| %>
+
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date, :autofocus => true %>
+
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date%>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= submit_tag "Update New Visit" %>
+
+<% end %>

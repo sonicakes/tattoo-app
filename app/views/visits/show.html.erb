@@ -1,2 +1,16 @@
-<h1>Visits#show</h1>
-<p>Find me in app/views/visits/show.html.erb</p>
+
+<% if @visit.user.id == @current_user.id %>
+
+<div style="color:blue !important;"class="works-index">
+<%= link_to "Edit Visit", edit_visit_path(@visit)  %>
+
+<%= link_to "Delete Visit", visit_path(@visit), :method => 'delete', :data => { :confirm => 'Are you sure?' }  %>
+</div>
+<% end %>
+        <p>This visit was created by <i><%= @visit.user.name %></i>
+          on <i><%= @visit.created_at.strftime("%Y-%m-%d") %></i>,
+          at <i><%= @visit.created_at.strftime("%I:%M%p") %></i>
+        </p>
+              <p>Start date is <%= @visit.start_date %></p>
+              <p>End date is <%= @visit.end_date %></p>
+              <p>Location is <%= @visit.location %></p>
