@@ -78,25 +78,9 @@
   </li>
  <% end %>
 </ul>
- 
+
 </div>
 
-
-<% if flash[:success] %>
-
-<%= flash[:success]%>
-
-<% end %>
-<% if flash[:notice] %>
-
-<%= flash[:notice]%>
-
-<% end %>
-<% if flash[:error] %>
-
-<%= flash[:error]%>
-
-<% end %>
 
 <%= yield %>
 </body>

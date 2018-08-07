@@ -1,9 +1,24 @@
-
 <div class="signup-container">
+
+  <% if flash[:success] %>p
+
+  <%= flash[:success]%>
+
+  <% end %>
+  <% if flash[:notice] %>
+
+  <p class="notice"><%= flash[:notice]%></p>
+
+  <% end %>
+  <% if flash[:error] %>
+
+  <p class="error"><%= flash[:error]%></p>
+
+  <% end %>
+
 
 <%= form_tag login_path do %>
   <h1>Log In</h1>
-
   <%= label_tag :email %>
   <%= email_field_tag :email, "" %>
 
@@ -24,7 +39,7 @@
 
   <% if @user.errors.any? %>
       <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></li>
+        <p><%= msg %></p>
       <% end %>
   <% end %>
 
