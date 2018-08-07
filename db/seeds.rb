@@ -89,6 +89,7 @@ user5 = User.create(
   :is_artist => false,
   :blurb => "Would love a custom-made tattoo for a reasonable price",
   :is_admin => false)
+
   if user5.errors.any?
 
       user5.errors.full_messages.each do |msg|
@@ -176,5 +177,5 @@ booking1 = Booking.create(
   :start_hour => 11)
 
 
-  user4.customer_bookings << booking1
-  user2.artist_bookings << booking1
+user4.customer_bookings << booking1
+user2.artist_bookings << booking1
