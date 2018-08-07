@@ -10,7 +10,7 @@
 #  profile_image   :text
 #  location        :text
 #  latitude        :float
-#  longtitude      :float
+#  longitude       :float
 #  phone           :text
 #  is_artist       :boolean
 #  blurb           :text

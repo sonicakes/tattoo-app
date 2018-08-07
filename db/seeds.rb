@@ -17,7 +17,7 @@ user1 = User.create(
   :profile_image => "",
   :location => "Newtown",
   :latitude => "",
-  :longtitude => "",
+  :longitude => "",
   :phone => "05-38-37-75",
   :is_artist => false,
   :blurb => "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
@@ -34,7 +34,7 @@ user2 = User.create(
   :profile_image => "https://images.unsplash.com/photo-1485742032238-7543513eeba6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fcb9b99a534c70a94cf558bd07d3bffd&auto=format&fit=crop&w=1500&q=80",
   :location => "Newtown",
   :latitude => "",
-  :longtitude => "",
+  :longitude => "",
   :phone => "234-657-343",
   :is_artist => true,
   :blurb => "First-rate tattos on demand",
@@ -50,8 +50,8 @@ user3 = User.create(
   :name => "John Travolta",
   :profile_image => "https://images.unsplash.com/photo-1519262113844-152510a1d98a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=11972b5dd562c360eeb4941abd19ca2e&auto=format&fit=crop&w=634&q=80",
   :location => "Double Bay",
-  :latitude => "",
-  :longtitude => "",
+  :latitude => -33.8775,
+  :longitude => 151.2411111111,
   :phone => "455-666-777",
   :is_artist => true,
   :blurb => "Simple Clean tattoo designs",
@@ -68,7 +68,7 @@ user4 = User.create(
   :profile_image => "https://images.unsplash.com/photo-1504376626428-15e04b55193b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c9e625c1dce077cc441f3f79d26dc583&auto=format&fit=crop&w=1050&q=80",
   :location => "Liverpool",
   :latitude => "",
-  :longtitude => "",
+  :longitude => "",
   :phone => "345-6765-3654",
   :is_artist => false,
   :blurb => "Want to get my first tatoo!",
@@ -84,7 +84,7 @@ user5 = User.create(
   :profile_image => "https://images.unsplash.com/photo-1520872024865-3ff2805d8bb3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0237069e47289314d9d9adb227a3fd7b&auto=format&fit=crop&w=821&q=80",
   :location => "Darlinghurst",
   :latitude => "",
-  :longtitude => "",
+  :longitude => "",
   :phone => "454-646-356",
   :is_artist => false,
   :blurb => "Would love a custom-made tattoo for a reasonable price",
@@ -140,7 +140,7 @@ visit1 = Visit.create(
  :end_date => "2018-09-02",
  :location  => "",
  :latitude => "",
- :longtitude => "")
+ :longitude => "")
 user2.visits << visit1
 
 visit2 = Visit.create(
@@ -148,7 +148,7 @@ visit2 = Visit.create(
  :end_date => "2018-09-09",
  :location  => "",
  :latitude => "",
- :longtitude => "")
+ :longitude => "")
 
 user2.visits << visit2
 
@@ -157,7 +157,7 @@ visit3 = Visit.create(
  :end_date => "2018-09-16",
  :location  => "",
  :latitude => "",
- :longtitude => "")
+ :longitude => "")
 
 user2.visits << visit3
 

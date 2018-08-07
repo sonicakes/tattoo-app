@@ -46,7 +46,7 @@ class VisitsController < ApplicationController
   # Strong params: create a whitelist of permitted parameters
 private
 def visit_params
-  params.require(:visit).permit(:start_date, :user_id, :end_date, :location, :latitude, :longtitude)
+  params.require(:visit).permit(:start_date, :user_id, :end_date, :location, :latitude, :longitude)
 end
 end
 #  start_date :date

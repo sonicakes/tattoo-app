@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_053734) do
     t.text "profile_image"
     t.text "location"
     t.float "latitude"
-    t.float "longtitude"
+    t.float "longitude"
     t.text "phone"
     t.boolean "is_artist"
     t.text "blurb"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_053734) do
     t.date "end_date"
     t.text "location"
     t.float "latitude"
-    t.float "longtitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

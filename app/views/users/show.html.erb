@@ -8,5 +8,7 @@
   <% if @current_user.present? %>
     <h4 class=''><%= @current_user.user_name %></h4>
   <% end %>
+
   <div id="map" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
+
 </div>
