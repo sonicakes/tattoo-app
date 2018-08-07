@@ -1,4 +1,8 @@
-
+<script>
+const app = {
+  username: '<%= @user.user_name %>'
+};
+</script>
 <div class='profile-show'>
   <% if @current_user.profile_image? %>
     <%= image_tag @current_user.profile_image %>

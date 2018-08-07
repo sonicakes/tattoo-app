@@ -1,30 +1,23 @@
 $(document).ready(function () {
 
-
-console.log( locations );
-
-
   const latitude = $('#map').data('latitude');
   const longitude = $('#map').data('longitude');
-  const title = $('#map').data('name');
+  const title = $('#map').data('title');
 
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    const locationMarkers = [];
-
-    for (let i = 0; i < locations.length; i++) {
-      let l = locations[i];
-      locationMarkers.push({
-        "lat": l.latitude,
-        "lng": l.longitude,
-        "infowindow": name
-      });
-    }
-
-    console.log( 'markers', locationMarkers )
-
-    markers = handler.addMarkers(locationMarkers);
-    console.log('added markers')
+    markers = handler.addMarkers([
+      {
+        "lat": latitude,
+        "lng": longitude,
+        // "picture": {
+        //   "url": "http://fillmurray.com/32/32",
+        //   "width":  32,
+        //   "height": 32
+        // },
+        "infowindow": app.username
+      }
+    ]);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
