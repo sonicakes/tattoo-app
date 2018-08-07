@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $black: rgb(15, 13, 12);
+$primary-color: rgb(13, 26, 38);
+
 
 #defaultCanvas0 {
   width: 100% !important;
@@ -25,7 +27,7 @@ a {
   ======================================================*/
 #navbar {
   background: white;
-  color: rgb(13, 26, 38);
+  color: $primary-color;
   position: fixed;
   top: 0;
   height: 60px;
@@ -86,7 +88,7 @@ a {
 }
 
 #navbar li a {
-  color: rgb(13, 26, 38);
+  color: $primary-color;
   display: block;
   font-size: 0.7em;
   height: 50px;
@@ -115,7 +117,7 @@ a {
   width: 0%;
   height: 1px;
   bottom: -1px;
-  background: rgb(13, 26, 38);
+  background: $primary-color;
 }
 
 #navbar li a:before {
@@ -124,13 +126,13 @@ a {
 }
 
 #navbar li a:after {
-  background: rgb(13, 26, 38);
+  background: $primary-color;
   right: 0;
   /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
 }
 
 #navbar li a:hover:before {
-  background: rgb(13, 26, 38);
+  background: $primary-color;
   width: 100%;
   transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
@@ -160,7 +162,7 @@ a {
 
   /* Icon Bars */
   .icon-bars {
-    background: rgb(13, 26, 38);
+    background: $primary-color;
     position: absolute;
     left: 1px;
     top: 45%;
@@ -171,7 +173,7 @@ a {
   }
 
   .icon-bars::before {
-    background: rgb(13, 26, 38);
+    background: $primary-color;
     content: '';
     position: absolute;
     left: 0;
@@ -186,7 +188,7 @@ a {
 
   .icon-bars::after {
     margin-top: 0px;
-    background: rgb(13, 26, 38);
+    background: $primary-color;
     content: '';
     position: absolute;
     left: 0;
@@ -284,7 +286,7 @@ a {
   ======================================================*/
 .overlay-menu {
   background: lightblue;
-  color: rgb(13, 26, 38);
+  color: $primary-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,4 +367,22 @@ a {
   &:hover {
     box-shadow: 0 0 40px 40px $black inset;
   }
+}
+
+/*======================================================
+                    footter
+  ======================================================*/
+.footer {
+ background-color: $black;
+ font-family: inherit;
+ font-size: 11px;
+ letter-spacing: 1px;
+ text-align:center;
+ position: fixed;
+ color: white;
+ bottom: 0;
+ z-index: -1;
+ width: 100vw;
+ height: 5em;
+
 }
