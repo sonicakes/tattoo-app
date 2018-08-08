@@ -86,9 +86,9 @@ input[type='text'], [type='email'], [type='password'], textarea {
 	transition: all 0.3s;
 }
 
-input {
-  height: 50px;
-}
+// input {
+//   height: 50px;
+// }
 
 input[type='text']:focus, [type='email']:focus, [type='password']:focus, textarea:focus {
 	outline: none;

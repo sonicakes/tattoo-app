@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+  if ( ! $('#photos').length) {
+    // There is no map div on this page, so don't run code below
+    return;
+  }
+
   function getRandomSize(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
