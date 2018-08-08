@@ -132,6 +132,111 @@ work5 = Work.create(
 :artwork_image => "https://images.unsplash.com/photo-1451296043620-0cdb844d4c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a78ec9e723231662b3fbd573137496d6&auto=format&fit=crop&w=500&q=60",
 :category => "grayscale")
 user2.works << work5
+
+work6 = Work.create(
+:title => "Sonia",
+:price => 25.99,
+:artwork_image => "https://images.unsplash.com/photo-1454329030972-00583f5f051f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e4fb9504f8af7a8c7660114413df03d9&auto=format&fit=crop&w=1042&q=80",
+:category => "black-and-white")
+user2.works << work6
+
+work7 = Work.create(
+:title => "John",
+:price => 55.49,
+:artwork_image => "https://images.unsplash.com/photo-1475868530036-7e1f42b9c91c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9e3ebce528cd9c8550bea0bcf02e3542&auto=format&fit=crop&w=992&q=80",
+:category => "colour ink")
+user2.works << work7
+
+work8 = Work.create(
+:title => "Positive",
+:price => 19.99,
+:artwork_image => "https://images.unsplash.com/photo-1517613014533-70f3817be7e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed7934915cbbb8a845920e5eb318b774&auto=format&fit=crop&w=700&q=80",
+:category => "colour splash")
+user2.works << work8
+
+work9 = Work.create(
+:title => "Mirror",
+:price => 125.99,
+:artwork_image => "https://images.unsplash.com/photo-1498326458300-02cceca23326?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1d65d8135e4d6b11a38ef2c391c276b9&auto=format&fit=crop&w=1050&q=80",
+:category => "thick brushes")
+user2.works << work9
+
+work10 = Work.create(
+:title => "Roses",
+:price => 36.50,
+:artwork_image => "https://images.unsplash.com/photo-1451296043620-0cdb844d4c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a78ec9e723231662b3fbd573137496d6&auto=format&fit=crop&w=500&q=60",
+:category => "grayscale")
+user2.works << work10
+
+work11 = Work.create(
+:title => "Yakuza",
+:price => 20.99,
+:artwork_image => "http://placekitten.com/200/300",
+:category => "black-and-white")
+user2.works << work11
+
+work12 = Work.create(
+:title => "Death",
+:price => 55.49,
+:artwork_image => "https://images.unsplash.com/photo-1475868530036-7e1f42b9c91c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9e3ebce528cd9c8550bea0bcf02e3542&auto=format&fit=crop&w=992&q=80",
+:category => "colour ink")
+user2.works << work12
+
+work13 = Work.create(
+:title => "Positive",
+:price => 19.99,
+:artwork_image => "https://images.unsplash.com/photo-1517613014533-70f3817be7e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed7934915cbbb8a845920e5eb318b774&auto=format&fit=crop&w=700&q=80",
+:category => "colour splash")
+user2.works << work13
+
+work14 = Work.create(
+:title => "Mirror",
+:price => 125.99,
+:artwork_image => "http://placekitten.com/500/400",
+:category => "thick brushes")
+user2.works << work14
+
+work15 = Work.create(
+:title => "Roses",
+:price => 36.50,
+:artwork_image => "http://placekitten.com/400/300",
+:category => "grayscale")
+user2.works << work15
+
+work16 = Work.create(
+:title => "Sonia",
+:price => 25.99,
+:artwork_image => "https://images.unsplash.com/photo-1454329030972-00583f5f051f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e4fb9504f8af7a8c7660114413df03d9&auto=format&fit=crop&w=1042&q=80",
+:category => "black-and-white")
+user2.works << work16
+
+work17 = Work.create(
+:title => "John",
+:price => 55.49,
+:artwork_image => "http://placekitten.com/200/300",
+:category => "colour ink")
+user2.works << work17
+
+work18 = Work.create(
+:title => "Positive",
+:price => 19.99,
+:artwork_image => "http://placekitten.com/400/300",
+:category => "colour splash")
+user2.works << work18
+
+work19 = Work.create(
+:title => "Mirror",
+:price => 125.99,
+:artwork_image => "http://placekitten.com/200/300",
+:category => "thick brushes")
+user2.works << work19
+
+work20 = Work.create(
+:title => "Roses",
+:price => 36.50,
+:artwork_image => "http://placekitten.com/200/300",
+:category => "grayscale")
+user2.works << work20
 # Now we add some visits
 # We create 3 different visits for 3 different weekends for user 2
 

@@ -8,4 +8,61 @@
 ## Live link
 https://inkspace.herokuapp.com/
 
-Other stuff coming soon
+
+## Core Requirements
+
+### Timeframe
+1 week
+
+### Work Method
+Group Work
+
+### Models
+ Your app should have at least 3 models. Make sure they are associated correctly!
+
+### Views
+ Use partials to DRY (Don’t Repeat Yourself) up your views.
+### Handles invalid data
+ Forms in your application should validate data and handle incorrect inputs. Validate sign up information, verify valid email addresses and secure passwords.
+### Use Gems
+ Use a GEM that talks to an API to add functionality to your app.
+### User Login
+ Make sure you have basic authentication and authorization set up (if you need it).
+### Heroku
+ Deploy your code to Heroku.
+
+
+### Completed Project deliverables:
+- Link to Heroku hosted project
+
+- Link to source code on GitHub
+
+## Description
+*Ink Space* is ...
+
+## Technologies used
+
+- Flex/Grid CSS
+- Normalize CSS
+- P5.js for animations and interactiveness
+- jQuery for interactions and maps
+- Cloudinary as image upload service
+- Rails 5.2.1 as Back End Handling
+- PostgreSQL as database
+- Heroku as deployment service
+- Geocoder GEM for delivering Maps
+- Bcrypt GEM to handle authentication/authorization
+
+## Project overview
+...
+
+### Models:
+- Users
+- Works
+- Visits
+- Bookings
+
+Each Model has a corresponding Controller.
+
+## What Next?
+...

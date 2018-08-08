@@ -1,23 +1,30 @@
-<div class="works-index">
+<script>
+// const gallery = {
+//   allWorks: '<img src="<%#= @work.artwork_image %>"alt="<%#=@work.title %>">'
+// };
+
+const gallery = [
+  <% @works.each do |work| %>
+    '<img src="<%= work.artwork_image %>"alt="<%= work.title %>">',
+  <% end %>
+];
+
+</script>
 
 <h1>All Works</h1>
+<div id="gallery-container">
 
-      <% @works.each do |work| %>
-
-
-              <p ><%= link_to work.title, work %></p>
-
-          <% if work.artwork_image.present? %>
-            <a href="<%= url_for work %>"><img src="<%= work.artwork_image %>"alt="<%=work.title %>"></a>
-          <% else %>
-          <p>  No photos provided for artwork.</p>
-          <% end %>
-
-          <p>
-            Created by <i><%= work.user.name %></i>
-            on <i><%= work.created_at.strftime("%Y-%m-%d") %></i>,
-            at <i><%= work.created_at.strftime("%I:%M%p") %></i>
-          </p>
-
-      <% end %>
+  <div id="photos">
+  </div>
 </div>
+
+    <!-- <% @works.each do |work| %>
+
+            <% if work.artwork_image.present? %>
+
+              <a href="<%= url_for work %>"><img src="<%= work.artwork_image %>"alt="<%=work.title %>"></a>
+</div>
+            <% else %>
+            <p>  No photos provided for artwork.</p>
+            <% end %>
+            <% end %> -->
