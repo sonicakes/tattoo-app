@@ -4,7 +4,7 @@
   max-width: 768px;
   margin: 60px auto;
   position: relative;
-font-family: "Lato";
+  font-family: "Lato";
 }
 
 #login-form {
@@ -24,6 +24,7 @@ margin: 0 auto;
 
 .label{
   margin:10px;
+
 }
 h1 {
   color: #474544;
@@ -40,15 +41,21 @@ h1 {
   width: 80px;
 }
 
-.icon_wrapper {
-  margin: 50px auto 0;
-  width: 100%;
+.icon-wrapper {
+  // display: flex;
+  // justify-content: center;
+  text-align: center;
+
+  // .icon-child{
+  //
+  //   margin: auto;
+  // }
+
 }
 
 .icon {
-  display: block;
+  margin-top: 1em;
   height: 100px;
-  margin: 0 auto;
   width: 100px;
 }
 .email {
@@ -59,7 +66,6 @@ h1 {
 input[type='text'], [type='email'], [type='password'], textarea {
 	background: none;
   border: none;
-	border-bottom: solid 2px #474544;
 	color: #474544;
 	font-size: 1.000em;
   font-weight: 400;
@@ -80,6 +86,10 @@ input[type='text'], [type='email'], [type='password'], textarea {
 	transition: all 0.3s;
 }
 
+input {
+  height: 50px;
+}
+
 input[type='text']:focus, [type='email']:focus, [type='password']:focus, textarea:focus {
 	outline: none;
 	padding: 0 0 0.875em 0;
@@ -96,6 +106,8 @@ input[type='text']:focus, [type='email']:focus, [type='password']:focus, textare
 
 .field {
   width: 100%;
+  border-bottom: solid 2px #474544;
+  margin: 1em 0;
 }
 
 

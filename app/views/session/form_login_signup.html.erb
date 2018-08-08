@@ -17,50 +17,48 @@
 
   <div id="login-form">
     <h1>&bull; Log In &bull;</h1>
-  <div class="underline">
-  </div>
-  <div class="icon-wrapper">
-    <i class="icon fas fa-chess-knight"></i>
-  </div>
+    <div class="underline"></div>
+    <div class="icon-wrapper">
+      <div class="icon-child">
+        <i class="icon fas fa-3x fa-chess-knight"></i>
+      </div>
+    </div>
     <%= form_tag login_path do %>
-
+    <div class="field">
       <%= label_tag :email %>
       <%= email_field_tag :email, nil, placeholder: 'example@gmail.com' %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password, nil, placeholder: 'chicken' %>
-
-
-
-  <%= button_tag type: 'submit', class: "form_button" do %>
-   Log In!
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, placeholder: 'chicken' %>
+    </div>
+    <%= button_tag type: 'submit', class: "form_button" do %>
+    Log In!
   <% end %>
 
+<% end %>
+</div>
 
-    <% end %>
-  </div>
+<div id="signup-form">
+<h1>&bull; Sign Up &bull;</h1>
+<div class="underline"></div>
+<div class="icon-wrapper">
+  <i class="icon fas fa-3x fa-chess-knight"></i>
+</div>
+<%= form_tag signup_path do %>
 
-  <div id="signup-form">
-        <h1>&bull; Sign Up &bull;</h1>
-        <div class="underline">
-        </div>
-        <div class="icon-wrapper">
-          <i class="icon fas fa-chess-knight"></i>
-        </div>
-    <%= form_tag signup_path do %>
-
-
-      <% if @user.errors.any? %>
-          <% @user.errors.full_messages.each do |msg| %>
-            <p><%= msg %></p>
-          <% end %>
-      <% end %>
-
-      <%= label_tag :signup_email %>
-      <%= email_field_tag :signup_email, nil, placeholder: 'example@gmail.com' %>
- <div class="field">
-      <%= label_tag(:name, "Full Name")%>
-      <%= text_field_tag :name, nil, placeholder: 'Barry Smith' %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+<% end %>
+<div class="field">
+  <%= label_tag :signup_email %>
+  <%= email_field_tag :signup_email, nil, placeholder: 'example@gmail.com' %>
+</div>
+<div class="field">
+  <%= label_tag(:name, "Full Name")%>
+  <%= text_field_tag :name, nil, placeholder: 'Barry Smith' %>
 </div>
 <div class="field">
   <%= label_tag(:user_name, "Choose User Name")%>
@@ -71,55 +69,55 @@
   <%= label_tag(:profile_image, "Upload Profile Image", class:"label")%>
   <%= file_field_tag :profile_image %>
 </div>
-      <div class="field">
-        <%= label_tag(:location, "Choose Your Location")%>
-        <%= text_field_tag :location, nil, placeholder: 'Darlinghurst' %>
+<div class="field">
+  <%= label_tag(:location, "Choose Your Location")%>
+  <%= text_field_tag :location, nil, placeholder: 'Darlinghurst' %>
 
-      </div>
+</div>
 
-<div class="blurb">
+<div class="blurb field">
   <%= label_tag(:blurb, "Write Your Blurb")%>
   <%= text_area_tag :blurb, nil, rows: 10, cols: 25, placeholder: 'I am an artist with 10 years experience...'%>
 
 </div>
-
-      <%= label_tag(:is_artist, "Are you an artist?")%>
-      <%= radio_button_tag(:is_artist_yes, 1) %>
-      <%= label_tag(:is_artist_yes, "Yes") %>
-      <%= radio_button_tag(:is_artist_no, 0) %>
-      <%= label_tag(:is_artist_no, "No") %>
+<div class="field">
+  <%= label_tag(:is_artist, "Are you an artist?")%>
+  <%= radio_button_tag(:is_artist_yes, 1) %>
+  <%= label_tag(:is_artist_yes, "Yes") %>
+  <%= radio_button_tag(:is_artist_no, 0) %>
+  <%= label_tag(:is_artist_no, "No") %>
+</div>
 
 <div class="field">
   <%= label_tag(:phone, "Provide Phone Number")%>
   <%= text_field_tag :phone, nil, placeholder: '04-34-64-35' %>
-
 </div>
+<div class="field">
+  <%= label_tag :signup_password %>
+  <%= password_field_tag :signup_password %>
+</div>
+<div class="field">
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag :password_confirmation%>
+</div>
+<%= button_tag type: 'submit', class:"form_button" do %>
+Sign Up!
+<% end %>
 
-      <%= label_tag :signup_password %>
-      <%= password_field_tag :signup_password %>
-
-      <%= label_tag :password_confirmation %>
-      <%= password_field_tag :password_confirmation%>
-
-  <%= button_tag type: 'submit', class:"form_button" do %>
-   Sign Up!
-  <% end %>
-
-
-    <% end %>
-  </div>
+<% end %>
+</div>
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
-    $('#toggle-login').click(function(){
-      $('#login-form').show();
-      $('#signup-form').hide();
-    });
+$(document).ready(function () {
+$('#toggle-login').click(function () {
+$('#login-form').show();
+$('#signup-form').hide();
+});
 
-    $('#toggle-signup').click(function(){
-      $('#login-form').hide();
-      $('#signup-form').show();
-    });
+$('#toggle-signup').click(function () {
+$('#login-form').hide();
+$('#signup-form').show();
+});
 });
 </script>
