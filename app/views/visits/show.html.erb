@@ -1,7 +1,7 @@
-
+<div style="margin-top: 5rem; "></div>
 <% if @visit.user.id == @current_user.id %>
 
-<div style="color:blue !important;"class="works-index">
+<div style="color:blue !important; "class="works-index">
 <%= link_to "Edit Visit", edit_visit_path(@visit)  %>
 
 <%= link_to "Delete Visit", visit_path(@visit), :method => 'delete', :data => { :confirm => 'Are you sure?' }  %>

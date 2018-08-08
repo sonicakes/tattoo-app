@@ -1,2 +1,41 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+
+<div>
+  <h1 style="margin-top: 5rem;">
+    Book a session with <%= @visit.user.name %>
+  </h1>
+  <div>
+    <%= image_tag @visit.user.profile_image, size: 150 %>
+  </div>
+</div>
+
+<p>All bookings are for 1 hour.</p>
+
+<br>
+<br>
+
+<%= form_for(@booking) do |f| %>
+  <div>
+    <div><b>Day</b></div>
+    <% @dateRange.each do |n| %>
+      <div>
+        <%= radio_button("booking", "date", n) %>
+        <%= label("booking", "date", n, value: n) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <div><b>Hour</b></div>
+    <% (9..16).each do |n| %>
+      <div>
+        <%= radio_button("booking", "start_hour", n) %>
+        <%= label("booking", "start_hour", "#{n} o'clock", value: n) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= hidden_field("booking", "artist_id", :value => @visit.user_id) %>
+    <%= submit_tag "Book Now", class: "form_button" %>
+  </div>
+<% end %>
