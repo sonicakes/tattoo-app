@@ -1,9 +1,4 @@
-// .works-index {
-// display:flex;
-// flex-direction: column;
-// justify-content: center;
-// margin-top: 10em;
-//
+@import url('https://fonts.googleapis.com/css?family=Lato');
 // }
 #photos {
    /* Prevent vertical gaps */
@@ -61,4 +56,17 @@
  margin: 0 auto;
  border: 1px black solid;
  margin-bottom: 10rem;
+}
+
+#new-work-container {
+  border: solid 3px #474544;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+  font-family: "Lato";
+}
+
+#new-work-form {
+  padding: 37.5px;
+  margin: 50px 0;
 }
