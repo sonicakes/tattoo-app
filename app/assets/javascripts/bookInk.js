@@ -77,7 +77,7 @@ function draw() {
     textSize(150);
     fill(255);
     textAlign(CENTER);
-    text("BOOK INK", 600, 400);
+    text("INK SPACE", 700, 400);
   }
   // colorMode(HSB);
   // var hue = cx / 10 - startcol;
