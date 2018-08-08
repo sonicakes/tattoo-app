@@ -1,25 +1,32 @@
 
-      <h1>New Artwork</h1>
+<div id="new-work-container">
 
-      <!-- #  title         :text
-      #  user_id       :integer
-      #  price         :decimal(, )
-      #  artwork_image :text
-      #  category      :text -->
+  <div id="new-work-form">
+    <h1>&bull; New Artwork &bull;</h1>
+
+    <div class="underline"></div>
+
+
+
 <%= form_for(@work, :html => { :multipart => true}) do |f| %>
-
+  <div class="field">
         <%= f.label :title %>
         <%= f.text_field :title, :autofocus => true %>
-
+      </div>
+  <div class="field">
         <%= f.label :price %>
         <%= f.number_field :price, step: 0.01, min: 0%>
-
+</div>
+  <div class="field">
         <%= f.label(:artwork_image, "Upload Img") %>
           <%= f.file_field :artwork_image %>
-
+        </div>
+  <div class="field">
         <%= f.label :category %>
         <%= f.text_field :category %>
-
-        <%= submit_tag "Create Artwork" %>
+</div>
+        <%= submit_tag "Create Artwork", class: "form_button" %>
 
 <% end %>
+</div>
+</div>
