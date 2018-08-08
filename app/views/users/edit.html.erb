@@ -1,69 +1,89 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js" type="text/javascript"></script>
 
+<div class="user-profile-container" >
 
-<div class="profile-edit">
-<% if @current_user.present? %>
-    <h2>Edit Your Profile!</h2>
-    <hr>
-          <% if @current_user.profile_image? %>
-            <%= image_tag @current_user.profile_image %>
-          <% else %>
-            <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png', :class => "avatar img-circle img-thumbnail" %>
-            <h6>Upload a different photo...</h6>
-          <% end %>
+  <div class="profile-edit">
+<div class="title-user">
+
+    <% if @current_user.present? %>
+    <h3> <%= @current_user.name %></h3>
+      <h2>Edit Your Profile!</h2>
+</div>
+      <hr>
+
+
+
+      <% if @current_user.profile_image? %>
+        <%= image_tag @current_user.profile_image, :class => "image-profile" %>
+      <% else %>
+        <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png', :class => "avatar img-circle img-thumbnail" %>
+
+        <h6>Upload a different photo...</h6>
+      <% end %>
 
     <% end %>
     <!-- edit form column -->
-        <%= @current_user.name %>
-      </div>
-      <h3>Personal info</h3>
-      <% if @user.errors.any? %>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-          <li>
-            <%= msg %>
-          </li>
-          <% end %>
-        </ul>
+
+  </div>
+<div id="edit-user-container">
+
+  <h3>Personal info</h3>
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
       <% end %>
-      <%= form_for(@user, :html => { :multipart => true}) do |f| %>
+    </ul>
+  <% end %>
 
-        <%= f.label(:name, "Full Name")%>
-          <%= f.text_field :name %>
-
-          <%= f.label :email%>
-            <%= f.text_field :email %>
-
-              <%= f.label :password %>
-                <%= f.password_field :password%>
-
-              <%= f.label :password_confirmation %>
-              <%= f.password_field :password_confirmation%>
-
-          <%= f.label(:user_name, "Choose User Name")%>
-          <%= f.text_field :user_name %>
-
-          <%= f.label(:profile_image, "Upload Img") %>
-            <%= f.file_field :profile_image %>
-
-          <%= f.label(:location, "Choose Your Location")%>
-          <%= f.text_field :location %>
-
-          <%= f.label(:blurb, "Write Your Blurb")%>
-          <%= f.text_field :blurb %>
-
-          <%= f.label(:is_artist, "Are you an artist?")%>
-          <%= radio_button_tag(:is_artist_yes, 1) %>
-          <%= label_tag(:is_artist_yes, "Yes") %>
-          <%= radio_button_tag(:is_artist_no, 0) %>
-          <%= label_tag(:is_artist_no, "No") %>
-
-          <%= f.label(:phone, "Provide Phone Number")%>
-          <%= f.text_field :phone %>
-
-          <%= f.submit "Save changes" %>
-
-
+  <%= form_for(@user, :html => { :multipart => true}) do |f| %>
+<div class="field">
+  <%= f.label(:name, "Full Name")%>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :email%>
+  <%= f.text_field :email %>
+</div>
+<div class="field">
+  <%= f.label :password %>
+  <%= f.password_field :password%>
+</div>
+<div class="field">
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation%>
+</div>
+<div class="field">
+  <%= f.label(:user_name, "Choose User Name")%>
+  <%= f.text_field :user_name %>
+</div>
+<div class="field">
+  <%= f.label(:profile_image, "Upload Img") %>
+  <%= f.file_field :profile_image %>
+</div>
+<div class="field">
+  <%= f.label(:location, "Choose Your Location")%>
+  <%= f.text_field :location %>
+</div>
+<div class="field">
+  <%= f.label(:blurb, "Write Your Blurb")%>
+  <%= f.text_field :blurb %>
+</div>
+<div class="field">
+  <%= f.label(:is_artist, "Are you an artist?")%>
+  <%= radio_button_tag(:is_artist_yes, 1) %>
+  <%= label_tag(:is_artist_yes, "Yes") %>
+  <%= radio_button_tag(:is_artist_no, 0) %>
+  <%= label_tag(:is_artist_no, "No") %>
+</div>
+<div class="field">
+  <%= f.label(:phone, "Provide Phone Number")%>
+  <%= f.text_field :phone %>
+</div>
+  <%= f.submit "Save changes" %>
 
 <% end %>
+  </div>
 </div>
