@@ -42,7 +42,8 @@ Group Work
 
 ## Technologies used
 
-- Flex/Grid CSS
+- CSS Flexbox
+- Seamless Grid for Gallery display (mix of HTML, CSS and JavaScript)
 - Normalize CSS
 - P5.js for animations and interactiveness
 - jQuery for interactions and maps

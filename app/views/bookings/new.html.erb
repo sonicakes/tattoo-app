@@ -14,24 +14,30 @@
 <br>
 
 <%= form_for(@booking) do |f| %>
-  <div>
+  <div class="container-radio">
     <div><b>Day</b></div>
+    <ul>
     <% @dateRange.each do |n| %>
-      <div>
+      <li>
         <%= radio_button("booking", "date", n) %>
-        <%= label("booking", "date", n, value: n) %>
-      </div>
+        <%= label("booking", "date", n, value: n, class:"label") %>
+         <div class="check"></div>
+      </li>
     <% end %>
+  </ul>
   </div>
 
-  <div>
+  <div class="container-radio">
     <div><b>Hour</b></div>
+    <ul>
     <% (9..16).each do |n| %>
-      <div>
+      <li>
         <%= radio_button("booking", "start_hour", n) %>
-        <%= label("booking", "start_hour", "#{n} o'clock", value: n) %>
-      </div>
+        <%= label("booking", "start_hour", "#{n} o'clock", value: n, class:"label") %>
+         <div class="check"></div>
+      </li>
     <% end %>
+  </ul>
   </div>
 
   <div>

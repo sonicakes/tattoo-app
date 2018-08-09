@@ -1,2 +1,8 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All Artists</h1>
+
+
+<% User.where(:is_artist => true).each do |user| %>
+
+  <h2>This artist's name <%= user.name %> </h2>
+  <p style="color:blue;"><%= link_to "View details", user %></p>
+<% end %>

@@ -5,13 +5,13 @@ const app = {
 </script>
 <div class="user-profile-container">
 <div class='profile-show'>
-  <% if @current_user.profile_image? %>
-    <%= image_tag @current_user.profile_image %>
+  <% if @user.profile_image? %>
+    <%= image_tag @user.profile_image, :class => "image-profile" %>
   <% else %>
     <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png' %>
   <% end %>
-  <% if @current_user.present? %>
-    <h4 class=''><%= @current_user.user_name %></h4>
+  <% if @user.present? %>
+    <h4 class=''><%= @user.user_name %></h4>
   <% end %>
 
   <div id="map" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
