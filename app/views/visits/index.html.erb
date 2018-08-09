@@ -1,18 +1,36 @@
-<h1>All Visits</h1>
-<%= link_to "Create New Visit", new_visit_path, class: 'form_button' %>
+<div class="visits-container">
+  <div>
+    <h1>All Visits</h1>
+    <%= link_to "Create New Visit", new_visit_path, class: 'form_button' %>
 
-<% @visits.each do |visit| %>
+    <% @visits.each do |visit| %>
 
-  <h2>This is visit number <%= visit.id %> </h2>
-  <p style="color:blue;"><%= link_to "View this visit", visit %></p>
-  <p>Created by <i><%= visit.user.name %></i>
-    on <i><%= visit.created_at.strftime("%Y-%m-%d") %></i>,
-    at <i><%= visit.created_at.strftime("%I:%M%p") %></i>
-  </p>
-  <p>Start date: <%= visit.start_date %> </p>
-  <p>End date: <%= visit.end_date %> </p>
-  <p>Location: <%= visit.location %> </p>
-  <p>
-    <%= link_to "Book a Session", new_booking_path(:visit_id => visit.id), class: 'form_button' %>
-  </p>
-<% end %>
+      <h2>This is visit number
+        <%= visit.id %>
+      </h2>
+      <p style="color:blue;"><%= link_to "View this visit", visit %></p>
+      <p>Created by
+        <i><%= visit.user.name %></i>
+        on
+        <i><%= visit.created_at.strftime("%Y-%m-%d") %></i>, at
+        <i><%= visit.created_at.strftime("%I:%M%p") %></i>
+      </p>
+      <p>Start date:
+        <%= visit.start_date %>
+      </p>
+      <p>End date:
+        <%= visit.end_date %>
+      </p>
+      <p>Location:
+        <%= visit.location %>
+      </p>
+      <p>
+        <%= link_to "Book a Session", new_booking_path(:visit_id => visit.id), class: 'form_button' %>
+      </p>
+    <% end %>
+  </div>
+  <div id="map_visit" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
+</div>
+<script>
+  const locations = <%== @visits.to_json(:include => 'user') %>;
+</script>

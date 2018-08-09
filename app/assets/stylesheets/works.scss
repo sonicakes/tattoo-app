@@ -5,115 +5,116 @@ $black: rgb(15, 13, 12); // }
   /* Prevent vertical gaps */
   line-height: 0;
 }
+
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0;
+  -moz-column-count: 5;
+  -moz-column-gap: 0;
+  column-count: 5;
+  column-gap: 0;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  // display: flex;
+  // justify-content: center;
+  width: 100% !important;
+  height: auto !important;
+}
+@media (max-width: 1200px) {
   #photos {
-    /* Prevent vertical gaps */
-    line-height: 0;
-    -webkit-column-count: 5;
-    -webkit-column-gap: 0;
-    -moz-column-count: 5;
-    -moz-column-gap: 0;
-    column-count: 5;
-    column-gap: 0;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
   }
+}
+@media (max-width: 1000px) {
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
 
-  #photos img {
-    /* Just in case there are inline attributes */
-    // display: flex;
-    // justify-content: center;
-    width: 100% !important;
-    height: auto !important;
-  }
-  @media (max-width: 1200px) {
-    #photos {
-      -moz-column-count: 4;
-      -webkit-column-count: 4;
-      column-count: 4;
-    }
-  }
-  @media (max-width: 1000px) {
-    #photos {
-      -moz-column-count: 3;
-      -webkit-column-count: 3;
-      column-count: 3;
-    }
-  }
-  @media (max-width: 800px) {
-    #photos {
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-    }
-  }
-  @media (max-width: 400px) {
-    #photos {
-      -moz-column-count: 1;
-      -webkit-column-count: 1;
-      column-count: 1;
-    }
-  }
+#gallery-container {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px black solid;
+  margin-bottom: 10rem;
+}
 
-  #gallery-container {
-    width: 800px;
-    margin: 0 auto;
-    border: 1px black solid;
-    margin-bottom: 10rem;
-  }
+#new-work-container {
+  border: solid 3px #474544;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+  font-family: "Lato";
+}
 
-  #new-work-container {
-    border: solid 3px #474544;
-    max-width: 768px;
-    margin: 60px auto;
-    position: relative;
-    font-family: "Lato";
-  }
+#new-work-form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
 
-  #new-work-form {
-    padding: 37.5px;
-    margin: 50px 0;
-  }
+.title-sketch {
+  font-family: Lato;
+  font-size: 1vw;
+  border: solid 2px $black;
+  width: 100px;
+  text-align: center;
+  margin-left: 10em;
+  margin-top: 20em;
+}
 
-  .title-sketch {
-    font-family: Lato;
-    font-size: 1vw;
-    border: solid 2px $black;
-    width: 100px;
-    text-align: center;
-    margin-left: 10em;
-    margin-top: 20em;
-  }
+.show-user-title {
+  border: solid 2px $black;
+  margin-top: 3em;
+}
 
-  .show-user-title {
-    border: solid 2px $black;
-    margin-top: 3em;
-  }
+.btn-explore {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $black;
+  border-radius: 0.6em;
+  color: $black;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 7em;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
 
-  .btn-explore {
-    box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid $black;
-    border-radius: 0.6em;
-    color: $black;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 7em;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-
-    &:focus,
-    &:hover {
-      color: #fff;
-      outline: 0;
-    }
+  &:focus,
+  &:hover {
+    color: #fff;
+    outline: 0;
   }
+}
 
-  .button-explore-container {
-    display: flex;
-    justify-content: center;
-  }
+.button-explore-container {
+  display: flex;
+  justify-content: center;
+}

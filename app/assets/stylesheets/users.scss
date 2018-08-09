@@ -61,3 +61,12 @@
     font-size: 3vw;
   }
 }
+
+
+.visits-container {
+ display: flex;
+ flex-flow: row wrap;
+ margin-bottom: 4em;
+ justify-content: space-around;
+
+}
