@@ -29,7 +29,7 @@
       </p>
     <% end %>
   </div>
-  <div id="map_visit" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
+  <div id="map_visit" style='width: 400px; height: 400px;'></div>
 </div>
 <script>
   const locations = <%== @visits.to_json(:include => 'user') %>;
