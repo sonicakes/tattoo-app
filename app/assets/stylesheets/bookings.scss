@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+.booking-container{
+font-family: "Lato";
+
+}
+.info{
+  text-align:center;
+}
 .container-radio{
   display: block;
   position: relative;
   height: auto;
-  width: 200px;
+  width: 500px;
   padding: 20px;
+  margin: 0 auto;
   background-color: rgb(13, 26, 38);
 }
 
@@ -92,3 +101,16 @@ input[type=radio]:checked ~ .label{
  .radio-title{
    color:white;
  }
+ .profile-booking-image{
+   width:10vw;
+   height:10vw;
+   border: 2px solid rgb(13, 26, 38);
+   border-radius: 50%;
+ }
+.button-booking{
+  display: flex;
+  justify-content: center;
+  margin-top:3em;
+  margin-bottom: 6em;
+
+}

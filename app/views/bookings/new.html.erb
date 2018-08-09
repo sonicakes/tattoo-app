@@ -1,14 +1,15 @@
-
 <div class="booking-container">
+<div class="info">
   <h1 style="margin-top: 5rem;">
     Book a session with <%= @visit.user.name %>
   </h1>
   <div>
-    <%= image_tag @visit.user.profile_image, size: 150 %>
+    <%= image_tag @visit.user.profile_image, class: "profile-booking-image" %>
   </div>
+  <p>Please note! All bookings are for 1 hour.</p>
 </div>
 
-<p>All bookings are for 1 hour.</p>
+
 
 <br>
 <br>
@@ -40,8 +41,9 @@
   </ul>
   </div>
 
-  <div>
+  <div class="button-booking">
     <%= hidden_field("booking", "artist_id", :value => @visit.user_id) %>
-    <%= submit_tag "Book Now", class: "form_button", style: "margin:20px 40px;" %>
+    <%= submit_tag "Book Now", class: "form_button" %>
   </div>
 <% end %>
+</div>
