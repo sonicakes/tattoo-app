@@ -1,5 +1,13 @@
-<div id="sketch-holder">
+ <div id="drawing-container">
+
+  <div id="sketch-holder">
   <!-- Our sketch will go here! -->
+  </div>
+</div>
+<div class="title-sketch">
+  <h2>
+     Sketch Your Own Tattoo
+  </h2>
 </div>
 <script type="text/javascript">
 let cnv;
@@ -15,10 +23,10 @@ function setup() {
   }
   resetDrawing();
   const button = createButton("reset").style("border", "2px solid black");
-  button.position(960, 100);
+  button.position(1050, 100);
   button.mousePressed(resetDrawing);
   const save = createButton("save").style("border", "2px solid black");
-  save.position(960, 130);
+  save.position(1050, 130);
   save.mousePressed(saveTattoo);
 
 }
