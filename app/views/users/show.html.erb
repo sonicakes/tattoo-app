@@ -1,26 +1,26 @@
 <script>
-const app = {
-  username: '<%= @user.user_name %>'
-};
+  const app = {
+    username: '<%= @user.user_name %>'
+  };
 </script>
 <div class="user-show-container">
-<div class='profile-show'>
-  <% if @user.profile_image? %>
-    <%= image_tag @user.profile_image, :class => "image-profile" %>
-  <% else %>
-    <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png' %>
-  <% end %>
-  <% if @user.present? %>
-  <div class="show-user-title">
-    <h4 class=''><%= @user.user_name %></h4>
+  <div class='profile-show'>
+    <% if @user.profile_image? %>
+      <%= image_tag @user.profile_image, :class => "image-profile" %>
+    <% else %>
+      <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png' %>
+    <% end %>
+    <% if @user.present? %>
+      <div class="show-user-title">
+        <h4 class=''><%= @user.user_name %></h4>
+      </div>
+      <div id="blurb">
+        <p class=''><%= @user.blurb %></p>
+      </div>
+
+    <% end %>
+
+    <div id="map" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
+
   </div>
-  <div id="blurb">
-    <p class=''><%= @user.blurb %></p>
-  </div>
-
-  <% end %>
-
-  <div id="map" style='width: 400px; height: 400px;' data-latitude="<%= @current_user.latitude %>" data-longitude="<%= @current_user.longitude %>" data-title="<%= @current_user.name %>"></div>
-
- </div>
 </div>
