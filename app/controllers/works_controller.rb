@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :authorize
+  before_action :authorize, :except => [:index]
   def index
     @works = Work.all
   end
