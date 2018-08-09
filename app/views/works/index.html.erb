@@ -1,7 +1,5 @@
 <script>
-// const gallery = {
-//   allWorks: '<img src="<%#= @work.artwork_image %>"alt="<%#=@work.title %>">'
-// };
+
 
 const gallery = [
   <% @works.each do |work| %>
@@ -17,14 +15,7 @@ const gallery = [
   <div id="photos">
   </div>
 </div>
+<div class="button-explore-container">
 
-    <!-- <% @works.each do |work| %>
-
-            <% if work.artwork_image.present? %>
-
-              <a href="<%= url_for work %>"><img src="<%= work.artwork_image %>"alt="<%=work.title %>"></a>
+<%= button_to 'Get started', login_path, :class => 'btn-explore first', :id => 'get-started', :method => 'get' %>
 </div>
-            <% else %>
-            <p>  No photos provided for artwork.</p>
-            <% end %>
-            <% end %> -->
