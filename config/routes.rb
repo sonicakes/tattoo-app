@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :works
   resources :visits
   resources :bookings
+  get '/draw' => 'pages#draw'
 
   root :to => 'pages#index'
 

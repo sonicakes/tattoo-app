@@ -1,17 +1,24 @@
-$(document).ready(() => {
-if( $('body.UsersController.Usersedit').length ){
+<div id="sketch-holder">
+  <!-- Our sketch will go here! -->
+</div>
+<script type="text/javascript">
+let cnv;
   // code for only somecontroller.someaction here!
 function setup() {
-  const cnv = createCanvas(600, 600);
+  cnv = createCanvas(600, 600);
   const x = (windowWidth - width) / 2;
   const y = (windowHeight - height) / 2;
-  cnv.position(x, y);
+  cnv.parent('sketch-holder');
+  console.log('position', x, y)
+  if (cnv.position) {
+    cnv.position(x, y);
+  }
   resetDrawing();
   const button = createButton("reset").style("border", "2px solid black");
-  button.position(700, 660);
+  button.position(960, 100);
   button.mousePressed(resetDrawing);
   const save = createButton("save").style("border", "2px solid black");
-  save.position(800, 660);
+  save.position(960, 130);
   save.mousePressed(saveTattoo);
 
 }
@@ -33,6 +40,4 @@ function touchMoved() {
   line(mouseX, mouseY, pmouseX, pmouseY);
   return false;
 }
-
-}
-});
+</script>
