@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 .booking-container{
+
 font-family: "Lato";
+
+}
+.booking-alert{
+  display:flex;
+  justify-content: center;
+  font-family: "Lato";
 
 }
 .info{
@@ -123,9 +130,8 @@ input[type=radio]:checked ~ .label{
   text-transform: uppercase;
 }
 .info-booking{
-margin-top:6em;
-border: 1px solid black;
+  margin:10em;
+  border: 1px solid black;
   text-align: center;
-
   width: 20vw;
 }
