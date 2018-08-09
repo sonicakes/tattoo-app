@@ -34,7 +34,30 @@
   box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
 }
 
+.user-show-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 10em;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+}
 
-// #drawing-container {
-//   margin: 20em !important;
-// }
+#blurb {
+  text-transform: lowercase;
+  font-size: 1.2vw;
+  margin: 3em;
+}
+
+@media (max-width: 800px) {
+  #blurb {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 400px) {
+  #blurb {
+    font-size: 3vw;
+  }
+}
