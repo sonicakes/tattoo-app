@@ -5,7 +5,7 @@
 
 const gallery = [
   <% @works.each do |work| %>
-    '<img src="<%= work.artwork_image %>"alt="<%= work.title %>">',
+    '<a href="/users/<%= work.user_id %>"><img src="<%= work.artwork_image %>"alt="<%= work.title %>"></a>',
   <% end %>
 ];
 
