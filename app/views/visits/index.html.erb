@@ -2,15 +2,6 @@
 <%= link_to "Create New Visit", new_visit_path, class: 'form_button' %>
 
 <% @visits.each do |visit| %>
-  <!-- #  user_id    :integer
-  #  start_date :date
-  #  end_date   :date
-  #  location   :text
-  #  latitude   :float
-  #  longtitude :float
-  #  created_at :datetime         not null
-  #  updated_at :datetime         not null -->
-
 
   <h2>This is visit number <%= visit.id %> </h2>
   <p style="color:blue;"><%= link_to "View this visit", visit %></p>
