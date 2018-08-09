@@ -1,5 +1,5 @@
 
-<div>
+<div class="booking-container">
   <h1 style="margin-top: 5rem;">
     Book a session with <%= @visit.user.name %>
   </h1>
@@ -15,12 +15,12 @@
 
 <%= form_for(@booking) do |f| %>
   <div class="container-radio">
-    <div><b>Day</b></div>
-    <ul>
+    <h3 class="radio-title"><b>Day</b></h3>
+    <ul class="list-radio">
     <% @dateRange.each do |n| %>
-      <li>
+      <li class="radio-item">
         <%= radio_button("booking", "date", n) %>
-        <%= label("booking", "date", n, value: n, class:"label") %>
+        <%= label("booking", "date", n, value: n, class:"label-radio") %>
          <div class="check"></div>
       </li>
     <% end %>
@@ -28,12 +28,12 @@
   </div>
 
   <div class="container-radio">
-    <div><b>Hour</b></div>
-    <ul>
+    <div class="radio-title"><b>Hour</b></div>
+    <ul class="list-radio">
     <% (9..16).each do |n| %>
-      <li>
+      <li class="radio-item">
         <%= radio_button("booking", "start_hour", n) %>
-        <%= label("booking", "start_hour", "#{n} o'clock", value: n, class:"label") %>
+        <%= label("booking", "start_hour", "#{n} o'clock", value: n, class:"label-radio") %>
          <div class="check"></div>
       </li>
     <% end %>
@@ -42,6 +42,6 @@
 
   <div>
     <%= hidden_field("booking", "artist_id", :value => @visit.user_id) %>
-    <%= submit_tag "Book Now", class: "form_button" %>
+    <%= submit_tag "Book Now", class: "form_button", style: "margin:20px 40px;" %>
   </div>
 <% end %>
