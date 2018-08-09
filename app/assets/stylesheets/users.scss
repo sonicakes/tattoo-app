@@ -15,6 +15,19 @@
     font-size: 1vw;
   }
 }
+.title-main {
+  color: #474544;
+  font-size: 18px;
+  margin:20px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+
+.users-all-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #edit-user-container {
   border: solid 3px #474544;

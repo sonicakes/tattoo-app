@@ -1,8 +1,15 @@
+
+
+
 <h1>All Artists</h1>
 
-
+<div class="booking-alert">
 <% User.where(:is_artist => true).each do |user| %>
 
-  <h2>This artist's name <%= user.name %> </h2>
-  <p style="color:blue;"><%= link_to "View details", user %></p>
+  <h2 class="title-success"><%= user.name %> </h2>
+</div>
+
+<div class="booking-alert">
+  <p><%= link_to "View details", user, class: "form_button" %></p>
+</div>
 <% end %>
