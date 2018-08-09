@@ -1,11 +1,11 @@
 <div class="visits-container">
   <div>
-    <h1>All Visits</h1>
-    <%= link_to "Create New Visit", new_visit_path, class: 'form_button' %>
+    <h1>All Tours</h1>
+    <%= link_to "Create New Tour", new_visit_path, class: 'form_button' %>
 
     <% @visits.each do |visit| %>
 
-      <h2>This is visit number
+      <h2>This is tour number
         <%= visit.id %>
       </h2>
       <p style="color:blue;"><%= link_to "View this visit", visit %></p>
