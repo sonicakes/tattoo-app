@@ -8,7 +8,14 @@ $primary-color: rgb(13, 26, 38);
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-bottom: 10em;
+  margin: 10em;
+  font-family: 'Lato', sans-serif;
+
+  .main-title {
+
+    text-transform: uppercase;
+    font-family: times, 'Lato';
+  }
 
 }
 
