@@ -55,8 +55,8 @@
   <% end %>
 <% end %>
 <div class="field">
-  <%= label_tag :signup_email %>
-  <%= email_field_tag :signup_email, nil, placeholder: 'example@gmail.com' %>
+  <%= label_tag :email %>
+  <%= email_field_tag :email, nil, placeholder: 'example@gmail.com' %>
 </div>
 <div class="field">
   <%= label_tag(:name, "Full Name")%>
@@ -84,9 +84,9 @@
 </div>
 <div class="field">
   <%= label_tag(:is_artist, "Are you an artist?")%>
-  <%= radio_button_tag(:is_artist_yes, 1) %>
+  <%= radio_button_tag(:is_artist, 1) %>
   <%= label_tag(:is_artist_yes, "Yes") %>
-  <%= radio_button_tag(:is_artist_no, 0) %>
+  <%= radio_button_tag(:is_artist, 0) %>
   <%= label_tag(:is_artist_no, "No") %>
 </div>
 
@@ -95,8 +95,8 @@
   <%= text_field_tag :phone, nil, placeholder: '04-34-64-35' %>
 </div>
 <div class="field">
-  <%= label_tag :signup_password %>
-  <%= password_field_tag :signup_password %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
 </div>
 <div class="field">
   <%= label_tag :password_confirmation %>
