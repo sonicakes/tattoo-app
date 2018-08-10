@@ -47,7 +47,7 @@
 <div class="icon-wrapper">
   <i class="icon fas fa-3x fa-chess-knight"></i>
 </div>
-<%= form_tag signup_path do %>
+<%= form_tag signup_path, :multipart => true do %>
 
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |msg| %>
@@ -73,7 +73,7 @@
 </div>
 <div class="field">
   <%= label_tag(:location, "Choose Your Location")%>
-  <%= text_field_tag :location, nil, placeholder: 'Darlinghurst' %>
+  <%= text_field_tag :location, nil, placeholder: 'Darlinghurst', required: true %>
 
 </div>
 

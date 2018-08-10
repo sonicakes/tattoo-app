@@ -10,6 +10,13 @@ class SessionController < ApplicationController
     flash[:notice] = "Does this code even execute?"
     @user = User.new user_params
     if @user.save
+      if params['profile_image']
+        cloudinary = Cloudinary::Uploader.upload(params['profile_image'])
+        @user.profile_image = cloudinary['url']
+      else
+        @user.profile_image = 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png'
+      end
+      @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thanks for joining #{@user.name}"
       redirect_to root_path # Redirect to home if the account is valid
