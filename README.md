@@ -53,8 +53,6 @@ Group Work
 - Geocoder GEM for delivering Maps
 - Bcrypt GEM to handle authentication/authorization
 
-## Project overview
-...
 
 ### Models:
 - Users
