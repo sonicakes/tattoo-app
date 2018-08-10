@@ -38,8 +38,7 @@ Group Work
 - Link to source code on GitHub
 
 ## Description
-*Ink Space* is ...
-
+*Ink Space* is a place for freelance tatoo artists to display their creations, specify the time of their visit to Sydney and welcome eager customers. As a client, you can preview artist's work and make a booking. For fun, you can sketch your own tatoo and save it to your computer.
 ## Technologies used
 
 - CSS Flexbox
@@ -66,4 +65,6 @@ Group Work
 Each Model has a corresponding Controller.
 
 ## What Next?
-...
+- Continue styling pages
+- Display calendar when making a booking reflecting the booking 
+- Refactor the code making it drier 
