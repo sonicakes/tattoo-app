@@ -1,11 +1,9 @@
-
-
 <div class="all-artist-container">
 
   <h1>All Artists</h1>
 
-  <div class="title-sucess">
     <% User.where(:is_artist => true).each do |user| %>
+    <div class="title-sucess">
 
       <h2 class="title-success"><%= user.name %>
       </h2>
@@ -14,6 +12,5 @@
     <div class="booking-alert">
       <p><%= link_to "View details", user, class: "form_button" %></p>
     </div>
-  <% end %>
-
+<% end %>
 </div>
