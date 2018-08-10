@@ -6,7 +6,7 @@
 <div class="user-show-container">
   <div class='profile-show'>
     <% if @user.profile_image? %>
-      <%= image_tag @user.profile_image, :class => "image-profile" %>
+      <%= cl_image_tag @user.profile_image, :class => "image-profile" %>
     <% else %>
       <%= image_tag 'https://www.goaltos.com/wp-content/uploads/sites/4559/2018/01/avatar-1577909_960_720.png' %>
     <% end %>
